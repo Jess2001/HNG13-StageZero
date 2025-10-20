@@ -14,4 +14,6 @@ Live Demo
 
 ## 🛠️ Run Locally
 1. Clone the repository:
+https://github.com/Jess2001/HNG13.git
+2.Run on your browser
    
