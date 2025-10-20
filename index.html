@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile Card</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+
   <style>
     * {
       box-sizing: border-box;
@@ -13,7 +18,7 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: #f7f8fc;
+      background: linear-gradient(125deg, #6d81d0, #dce0f0);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -49,8 +54,8 @@
     }
 
     figure img {
-      width: 150px;
-      height: 150px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid #ddd;
@@ -74,6 +79,41 @@
       color: #555;
       line-height: 1.4;
     }
+nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6a78dd;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: #f0f4ff;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+nav ul li a i {
+  font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+  background: #dce9ff;
+  color: #6a78dd;
+  transform: translateY(-2px);
+}
+
+nav ul li a:focus {
+  outline: 2px solid #404fc1;
+  outline-offset: 2px;
+}
 
     nav ul {
       display: flex;
@@ -83,7 +123,7 @@
     }
 
     nav ul li a {
-      color: #007bff;
+      color: #6a78dd;
       text-decoration: none;
       font-weight: 500;
       transition: 0.2s;
@@ -109,6 +149,18 @@
       font-size: 0.9rem;
       color: #777;
     }
+    .timestamp {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #777;
+  background: #f4f6ff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  font-family: monospace;
+  letter-spacing: 0.5px;
+}
+
 
   </style>
 </head>
@@ -117,7 +169,7 @@
   <article data-testid="test-profile-card">
     <figure>
       <img 
-        src="https://i.pravatar.cc/150?img=32" 
+        src="./assets/jess.jpeg" 
         alt="User Avatar" 
         data-testid="test-user-avatar"
       >
@@ -125,23 +177,49 @@
 
     <div class="content">
       <header>
-        <h2 data-testid="test-user-name">Jess</h2>
+        <h2 data-testid="test-user-name">Jess Wangui</h2>
       </header>
 
       <p data-testid="test-user-bio">
-        A dreamer, a coder, a lover of soft lights and loud truths.  
-        Building worlds through code and courage. 💻✨
+        Just a girl who is a dreamer, a coder, a lover of soft lights and loud truths.  
+        Building worlds through code and courage. 
       </p>
 
-      <p class="time" data-testid="test-user-time" id="user-time"></p>
-
+      <!-- Current Time -->
+      <div class="timestamp">
+        <time data-testid="test-user-time" id="currentTime"></time>
+      </div>
       <nav>
-        <ul data-testid="test-user-social-links">
-          <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">Twitter</a></li>
-          <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">GitHub</a></li>
-          <li><a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">LinkedIn</a></li>
-        </ul>
-      </nav>
+  <ul data-testid="test-user-social-links">
+    <li>
+      <a href="https://jess2001.github.io/portfolio/" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         data-testid="test-user-social-portfolio">
+        <i class="fa-solid fa-globe"></i> Portfolio
+      </a>
+    </li>
+
+    <li>
+      <a href="https://github.com/Jess2001" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         data-testid="test-user-social-github">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </li>
+
+    <li>
+      <a href="https://www.linkedin.com/in/jecintawangui" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         data-testid="test-user-social-linkedin">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+    </li>
+  </ul>
+</nav>
+
 
       <section>
         <h3>Hobbies</h3>
@@ -164,8 +242,18 @@
   </article>
 
   <script>
-    // Display current time in milliseconds
-    document.getElementById("user-time").textContent = Date.now();
+    function updateTime() {
+    const timeElement = document.getElementById("currentTime");
+    if (timeElement) {
+      timeElement.textContent = Date.now(); // shows milliseconds
+    }
+  }
+
+  // set initial time
+  updateTime();
+
+  // optionally update every second to keep it fresh
+  setInterval(updateTime, 1000);
   </script>
 
 </body>
