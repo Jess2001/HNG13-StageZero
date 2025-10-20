@@ -3,9 +3,7 @@ Profile Card Component
 A responsive and semantic profile card built with HTML, CSS, and JavaScript.
 
 Live Demo
-👉 [View on Netlify](https://your-live-link.netlify.app)  
-or  
-👉 [View on GitHub Pages](https://your-username.github.io/profile-card-component)
+👉 [View on Netlify](https://jess-profile-card.netlify.app/)  
 
 ##  Features
 - Semantic HTML structure (article, figure, nav, section)
