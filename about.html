@@ -3,51 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <title>About Me</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+/>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="main-nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+  <main data-testid="test-about-me">
+    <header>
+      <h6 class="subtitle"data-testid="test-about-me-title">About Me</h6>
+    </header>
+    <section>
+      <h2>Who I Am</h2>
+      <p data-testid="test-about-me-description">
+        I'm a passionate web developer with a love for creating interactive and dynamic user experiences.
+      </p>
+    </section>
+    <section data-testid="test-about-goals">
+    <h2>Goals in This Program</h2>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+      <li>Learn how to structure and scale frontend projects</li>
+      <li>Master accessibility and responsive design</li>
+      <li>Build confidence in deploying to production</li>
     </ul>
-  </nav>
+  </section>
 
-  <div class="container">
-    <form data-testid="test-contact-form" id="contactForm">
-      <div class="form-group">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" aria-describedby="error-name" data-testid="test-contact-name" required>
-        <span class="error" id="error-name" data-testid="test-contact-error-name" aria-live="polite"></span>
-      </div>
+  <section data-testid="test-about-confidence">
+    <h2>Areas of Low Confidence</h2>
+    <p>Some areas where I feel less confident include advanced JavaScript concepts and state management in React.</p>
+  </section>
 
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" aria-describedby="error-email" data-testid="test-contact-email" required>
-        <span class="error" id="error-email" data-testid="test-contact-error-email" aria-live="polite"></span>
-      </div>
+  <section data-testid="test-about-future-note">
+    <h2>Note to Future Self</h2>
+    <p>You are exactly where you need to be. Do not rush the process.</p>
+  </section>
 
-      <div class="form-group">
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" aria-describedby="error-subject" data-testid="test-contact-subject" required>
-        <span class="error" id="error-subject" data-testid="test-contact-error-subject" aria-live="polite"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" aria-describedby="error-message" data-testid="test-contact-message" required></textarea>
-        <span class="error" id="error-message" data-testid="test-contact-error-message" aria-live="polite"></span>
-      </div>
-
-      <button type="submit" data-testid="test-contact-submit">Submit</button>
-    </form>
-    
-    <div class="success-message" data-testid="test-contact-success" role="alert" aria-atomic="true"></div>
-  </div>
-  
+  <section data-testid="test-about-extra">
+    <h2>Extra Thoughts</h2>
+    <p>Everything is a learning experience.</p>
+  </section>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
